@@ -42,29 +42,30 @@ $filetype = $thumbnail ? wp_check_filetype( $thumbnail ) : null;
                 <!-- Image Display -->
                 <img src="<?php echo esc_url( $thumbnail ); ?>" alt="<?php esc_attr_e( 'Story Thumbnail', 'shoppable-stories' ); ?>" style="max-width: 100%; height: auto;" />
             <?php endif; ?>
-            
-            <?php if ( $summary ) : ?>
-                <div class="story-summary">
-                    <p><?php echo esc_html( $summary ); ?></p>
-                </div>
-            <?php endif; ?>
+            <div class="overlay-content">
+                <?php if ( $summary ) : ?>
+                    <div class="story-summary">
+                        <p><?php echo esc_html( $summary ); ?></p>
+                    </div>
+                <?php endif; ?>
 
-            <?php /*if ( $product ) : ?>
-                <div class="story-product">
-                    <p>
-                        <?php esc_html_e( 'Linked Product:', 'shoppable-stories' ); ?> 
-                        <a href="<?php echo esc_url( $product_url ); ?>" target="_blank"><?php echo esc_html( $product_name ); ?></a>
-                    </p>
-                </div>
-            <?php endif; */ ?>
+                <?php /*if ( $product ) : ?>
+                    <div class="story-product">
+                        <p>
+                            <?php esc_html_e( 'Linked Product:', 'shoppable-stories' ); ?> 
+                            <a href="<?php echo esc_url( $product_url ); ?>" target="_blank"><?php echo esc_html( $product_name ); ?></a>
+                        </p>
+                    </div>
+                <?php endif; */ ?>
 
-            <?php if ( $button_text && $product ) : ?>
-                <div class="story-action">
-                    <a href="<?php echo esc_url( add_query_arg( 'add-to-cart', $product_id, wc_get_cart_url() ) ); ?>" class="button">
-                        <?php echo esc_html( $button_text ); ?>
-                    </a>
-                </div>
-            <?php endif; ?>
+                <?php if ( $button_text && $product ) : ?>
+                    <div class="story-action">
+                        <a href="<?php echo esc_url( add_query_arg( 'add-to-cart', $product_id, wc_get_cart_url() ) ); ?>" class="button">
+                            <?php echo esc_html( $button_text ); ?>
+                        </a>
+                    </div>
+                <?php endif; ?>
+            </div>
         </div>
     <?php endif; ?>
 </div>
