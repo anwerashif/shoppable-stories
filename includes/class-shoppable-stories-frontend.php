@@ -24,10 +24,43 @@ class Shoppable_Stories_Frontend {
      * Enqueue front-end styles and scripts.
      */
     public function enqueue_scripts() {
-        wp_enqueue_style( 'shoppable-stories-style', SHOPPABLE_STORIES_URL . 'assets/css/front-style.css', [], SHOPPABLE_STORIES_VERSION );
-        wp_enqueue_script( 'shoppable-stories-script', SHOPPABLE_STORIES_URL . 'assets/js/front-script.js', [ 'jquery' ], SHOPPABLE_STORIES_VERSION, true );
+        // Slick Slider CSS and JS
+        wp_enqueue_style(
+            'slick-css',
+            SHOPPABLE_STORIES_URL . 'assets/slick/slick.css',
+            [],
+            '1.8.1' // Replace with the correct version
+        );
+        wp_enqueue_style(
+            'slick-theme-css',
+            SHOPPABLE_STORIES_URL . 'assets/slick/slick-theme.css',
+            [],
+            '1.8.1' // Replace with the correct version
+        );
+        wp_enqueue_script(
+            'slick-js',
+            SHOPPABLE_STORIES_URL . 'assets/slick/slick.min.js',
+            [ 'jquery' ],
+            '1.8.1', // Replace with the correct version
+            true
+        );
+    
+        // Front-end plugin styles and scripts
+        wp_enqueue_style(
+            'shoppable-stories-style',
+            SHOPPABLE_STORIES_URL . 'assets/css/front-style.css',
+            [],
+            SHOPPABLE_STORIES_VERSION
+        );
+        wp_enqueue_script(
+            'shoppable-stories-script',
+            SHOPPABLE_STORIES_URL . 'assets/js/front-script.js',
+            [ 'jquery', 'slick-js' ],
+            SHOPPABLE_STORIES_VERSION,
+            true
+        );
     }
-
+    
     /**
      * Render stories on the front-end using a shortcode.
      *

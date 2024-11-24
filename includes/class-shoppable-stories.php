@@ -18,6 +18,7 @@ class Shoppable_Stories {
         require_once SHOPPABLE_STORIES_PATH . 'includes/class-shoppable-stories-cpt.php'; // Custom Post Type logic.
         require_once SHOPPABLE_STORIES_PATH . 'includes/class-shoppable-stories-frontend.php'; // Front-end display logic.
         require_once SHOPPABLE_STORIES_PATH . 'includes/class-shoppable-stories-admin.php'; // Admin dashboard functionality.
+        require_once SHOPPABLE_STORIES_PATH . 'includes/meta-boxes.php'; // Custom Post Type Meta Boxes
     }
 
     /**
@@ -35,5 +36,15 @@ class Shoppable_Stories {
         // Initialize the admin panel functionality.
         $admin = new Shoppable_Stories_Admin();
         $admin->init();
+    }
+
+    /**
+     * Get the full URL for an asset in the plugin.
+     *
+     * @param string $relative_path The relative path to the asset (e.g., 'assets/img/Polygon_3_1.png').
+     * @return string The full URL to the asset.
+     */
+    public function get_asset_url($relative_path) {
+        return SHOPPABLE_STORIES_URL . $relative_path;
     }
 }
