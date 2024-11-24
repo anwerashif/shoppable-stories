@@ -18,6 +18,8 @@ class Shoppable_Stories {
         require_once SHOPPABLE_STORIES_PATH . 'includes/class-shoppable-stories-cpt.php'; // Custom Post Type logic.
         require_once SHOPPABLE_STORIES_PATH . 'includes/class-shoppable-stories-frontend.php'; // Front-end display logic.
         require_once SHOPPABLE_STORIES_PATH . 'includes/class-shoppable-stories-admin.php'; // Admin dashboard functionality.
+        require_once SHOPPABLE_STORIES_PATH . 'includes/meta-boxes.php'; // Custom Post Type Meta Boxes
+
     }
 
     /**

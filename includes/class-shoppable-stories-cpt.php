@@ -33,8 +33,8 @@ class Shoppable_Stories_CPT {
             'public'             => true, // Make it publicly accessible.
             'has_archive'        => true, // Enable archive pages.
             'menu_icon'          => 'dashicons-format-gallery', // Icon for the admin menu.
-            'supports'           => [ 'title', 'editor', 'thumbnail' ], // Enable basic editing features.
-            'show_in_rest'       => true, // Enable Gutenberg support.
+            'supports'           => [ 'title' ], // Enable basic editing features.
+            'show_in_rest'       => false, // Enable Gutenberg support.
         ];
 
         // Register the custom post type.
